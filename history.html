@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <title>History-Page</title>
+  </head>
+  <body>
+
+    <nav class="sticky top-0 w-full bg-gray-100">
+      <div
+        class="flex justify-between items-center p-4 w-[90%] mx-auto h-[100px]"
+      >
+        <a href="blog.html">
+          <button
+            class="bg-lime-400 hover:bg-lime-500 text-neutral-900 font-bold py-2 px-4 rounded-md"
+          >
+            Blog
+          </button>
+        </a>
+        <div class="max-sm:ml-10 flex items-center gap-3">
+          <img src="/assets/logo.png" alt="logo" class="w-[50px] h-[50px]" />
+          <h1 class="text-md md:text-xl font-bold text-neutral-900">
+            Donate Bangladesh
+          </h1>
+        </div>
+
+        <div class="max-sm:ml-10 flex items-center gap-3">
+          <img src="/assets/coin.png" alt="logo" class="w-[40px] h-[40px]" />
+          <span
+            id="total-value"
+            class="text-md md:text-lg font-bold text-gray-400"
+            >5500 BDT</span
+          >
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="mt-10 flex justify-center items-center gap-8 max-w-7xl mx-auto">
+      <a href="index.html">
+        <button id="donation-page-btn" class="font-bold py-3 px-6 rounded-md">
+          Donation
+        </button>
+      </a>
+      <button id="history-page-btn" class="font-bold py-3 px-6 rounded-md">
+        History
+      </button>
+    </div>
+
+
+    <div
+      id="history"
+      class="max-w-[1100px] p-4 mx-auto mt-10 flex flex-col gap-6"
+    >
+      
+    </div>
+
+    <script src="history.js"></script>
+  </body>
+</html>

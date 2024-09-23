@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+
+    <title>Blog-Page</title>
+  </head>
+  <body>
+
+    <nav class="sticky top-0 w-full bg-gray-100">
+      <div
+        class="flex justify-between items-center p-4 w-[90%] mx-auto h-[100px]"
+      >
+        <a href="index.html">
+          <button
+            class="bg-lime-400 hover:bg-lime-500 text-neutral-900 font-bold py-2 px-4 rounded-md"
+          >
+            Home
+          </button>
+        </a>
+        <div class="max-sm:ml-10 flex items-center gap-3">
+          <img src="/assets/logo.png" alt="logo" class="w-[50px] h-[50px]" />
+          <h1 class="text-md md:text-xl font-bold text-neutral-900">
+            Donate Bangladesh
+          </h1>
+        </div>
+
+        <div class="max-sm:ml-10 flex items-center gap-3">
+          <img src="/assets/coin.png" alt="logo" class="w-[40px] h-[40px]" />
+          <span
+            id="total-value"
+            class="text-md md:text-lg font-bold text-gray-400"
+            >5500 BDT</span
+          >
+        </div>
+      </div>
+    </nav>
+
+    <h1 class="mt-8 ml-10 text-3xl font-bold text-neutral-900">
+      Important FAQ
+    </h1>
+
+    <div class="max-w-[1100px] p-2 mx-auto mt-10">
+
+      <div class="space-y-4">
+        <div class="border border-gray-300 rounded-md">
+          <button
+            class="flex items-center justify-between w-full p-4 font-bold text-black bg-white"
+            onclick="toggleAccordion(0)"
+          >
+            What is the document object model in JS?
+            <span class="transform transition-transform" id="arrow-0">▼</span>
+          </button>
+          <div class="px-4 pb-4 hidden text-black" id="content-0">
+            The Document Object Model (DOM) is a programming interface that represents the structure of an HTML document as a tree of objects that can be manipulated using JavaScript.
+          </div>
+        </div>
+
+        <div class="border border-gray-300 rounded-lg">
+          <button
+            class="flex items-center justify-between w-full p-4 font-bold text-black bg-white"
+            onclick="toggleAccordion(1)"
+          >
+            How do you select an element from the DOM?
+            <span class="transform transition-transform" id="arrow-1">▼</span>
+          </button>
+          <div class="px-4 pb-4 hidden text-black" id="content-1">
+            You can select an element using methods like document.getElementById(), document.querySelector(), or document.querySelectorAll().
+          </div>
+        </div>
+
+        <div class="border border-gray-300 rounded-lg">
+          <button
+            class="flex items-center justify-between w-full p-4 font-bold text-black bg-white"
+            onclick="toggleAccordion(2)"
+          >
+          What is event delegation in the context of the DOM, and why is it useful?
+            <span class="transform transition-transform" id="arrow-2">▼</span>
+          </button>
+          <div class="px-4 pb-4 hidden text-black" id="content-2">
+            Event delegation is a technique where a single event listener is added to a parent element to manage events for multiple child elements, making it more efficient for dynamic content.
+          </div>
+        </div>
+
+        <div class="border border-gray-300 rounded-lg">
+          <button
+            class="flex items-center justify-between w-full p-4 font-bold text-black bg-white"
+            onclick="toggleAccordion(2)"
+          >
+          How do you manipulate an element's attribute and styles using the DOM?
+            <span class="transform transition-transform" id="arrow-2">▼</span>
+          </button>
+          <div class="px-4 pb-4 hidden text-black" id="content-2">
+            You can use element.setAttribute() to change attributes and element.style.property = "value" to modify styles directly.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+
+      function toggleAccordion(index) {
+        const contents = document.querySelectorAll('[id^="content-"]');
+        const arrows = document.querySelectorAll('[id^="arrow-"]');
+
+
+        contents.forEach((content, i) => {
+          if (i === index) {
+
+            content.classList.toggle("hidden");
+
+            arrows[i].classList.toggle("rotate-180");
+          } else {
+
+            content.classList.add("hidden");
+            arrows[i].classList.remove("rotate-180");
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
